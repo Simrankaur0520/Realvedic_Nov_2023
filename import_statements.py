@@ -1,0 +1,43 @@
+import numpy as np
+import pandas as pd
+import time
+from datetime import datetime as dt
+import datetime
+import re
+from operator import itemgetter 
+import os
+import random
+import json
+import PIL
+from PIL import Image
+from dotenv import load_dotenv
+
+#-------------------------Django Modules---------------------------------------------
+from django.http import Http404, HttpResponse, JsonResponse,FileResponse
+from django.shortcuts import render
+from django.db.models import Avg,Count,Case, When, IntegerField,Sum,FloatField,CharField
+from django.db.models import F,Func,Q
+from django.db.models import Value as V
+from django.db.models.functions import Concat,Cast,Substr
+from django.contrib.auth.hashers import make_password,check_password
+from django.db.models import Min, Max
+from django.db.models import Subquery
+from django.core.files.storage import FileSystemStorage
+from django.views.decorators.csrf import csrf_exempt
+
+#----------------------------restAPI--------------------------------------------------
+from rest_framework.decorators import parser_classes,api_view
+from rest_framework.parsers import MultiPartParser,FormParser
+from rest_framework.response import Response
+
+#------------------------------razorpay---------------------------------------------
+import razorpay
+
+#--------------------------- user models -------------------------------------------
+from realvedic_app.models import *
+# -------------------------- admin model ---------------------------------------------
+from admin_realvedic_app.models import admin_login
+from admin_realvedic_app.models import actionLogs
+
+#-----------------------------login with otp-----------------------------------------
+import os
